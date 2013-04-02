@@ -48,12 +48,12 @@ label{
 	border-radius: 5px;
 	margin-left:90px;
 }
-form{
+dl{
 	width:330px;
 	margin-top:0px;
 	margin-right:auto;
 	margin-left:auto;
-	height:370px;
+	
 	border-radius: 10px;
 	border : 10px solid white;
 	background-color : white;

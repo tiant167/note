@@ -51,7 +51,7 @@ color:#54798b;
 }
 h3.post-title, h3.post-title-small {
 margin:0; padding:10px 0;
-width:380px; height:auto;
+width:280px; height:auto;
 border-bottom:4px solid #30393d;
 }
 h3.post-title-small {
@@ -236,12 +236,12 @@ float:left; overflow:visible;
 /* 05 - CONTENIDO PRINCIPAL
 /* ----------------------------------------------*/
 #main-content {
-	width:960px;
+width:960px;
 margin-left:200px;
 padding:20px 0;
 background:url(/image/maincontent.gif) no-repeat top center;
 border-top:1px solid #c6dee7;
-border-bottom:10px solid #d0dce2;
+
 }
 .post {
 margin:0 0 25px 0;
@@ -325,4 +325,35 @@ background:none;
 
 .container{
 	margin-left:160px;
+}
+
+pre{
+	font-size:15px;
+	margin-top:20px;
+}
+
+p{
+	margintop:20px;
+	font-size:35px;
+	text-align:center;
+}
+.btn{
+	background: #7bbfea;
+	color: rgba(255,255,255,.8);
+	box-shadow: 0 1px 0 rgba(0,0,0,.05),0 1px 0 rgba(255,255,255,.15) inset;
+	border: 1px solid #7bbfea;
+	cursor: pointer;
+	font-size: 14px;
+	line-height: 18px;
+	text-shadow: 0 1px 0 rgba(0,0,0,.2);
+	padding: 6px 15px;
+	text-align: center;
+	vertical-align: middle;
+	border-radius: 5px;
+
+}
+#button_div{
+	width:120px;
+	margin-right:auto;
+	margin-left:auto;
 }

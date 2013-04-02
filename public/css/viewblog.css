@@ -234,10 +234,10 @@ pre{
 }
 
 .btn{
-	background: #1e95e5;
+	background: #7bbfea;
 	color: rgba(255,255,255,.8);
 	box-shadow: 0 1px 0 rgba(0,0,0,.05),0 1px 0 rgba(255,255,255,.15) inset;
-	border: 1px solid #147dcd;
+	border: 1px solid #7bbfea;
 	cursor: pointer;
 	font-size: 14px;
 	line-height: 18px;

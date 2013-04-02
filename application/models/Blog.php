@@ -117,5 +117,20 @@ class Application_Model_Blog extends Zend_Db_Table_Abstract
 			return false;
 		}
 	}
+	
+	public function getNewBlogList($userid){
+		$select = $this->select();
+		$select->where("userid=?",$userid);
+		$select->from('note_blog',array('blogid','title'));
+		$select->order('time DESC');
+		$select->limit('6','0');
+		$result = $this->fetchAll($select);
+		if($result){
+			return $result;
+		}
+		else{
+			return false;
+		}
+	}
 }
 

@@ -17,7 +17,8 @@ class IndexController extends Zend_Controller_Action
         if ($this->getRequest()->isPost()){
         	if($Form->isValid($_POST)){
         		$data = $Form->getValues();
-        		
+        		//将用户输入的特殊字符转成html的字符。&  成为 &amp;" 成为 &quot;'  成为 &#039;< 成为 &lt;>  成为 &gt;
+        		$data['username'] = htmlspecialchars($data['username']);
         		//在这里对传过来的RSA加密过的密码进行解密
         		$txt_en = $data['password'];
         		$txt_en = base64_encode(pack("H*", $txt_en));
@@ -110,6 +111,8 @@ class IndexController extends Zend_Controller_Action
  		if ($this->getRequest()->isPost()){
  			if($Form->isValid($_POST)){
  				$data = $Form->getValues();
+ 				//将用户输入的特殊字符转成html的字符。&  成为 &amp;" 成为 &quot;'  成为 &#039;< 成为 &lt;>  成为 &gt;
+ 				$data['username'] = htmlspecialchars($data['username']);
  				$txt_en = $data['password'];
  				$txt_en = base64_encode(pack("H*", $txt_en));
  				$file = 'ssl/server.key';
@@ -121,7 +124,7 @@ class IndexController extends Zend_Controller_Action
  				if($validUser == false){
  					$newUser = $modelUser->createUser($data);
  					if($newUser){
- 						$this->_redirect('/user/');
+ 						$this->_redirect('/');
  						 
  					}
  				}

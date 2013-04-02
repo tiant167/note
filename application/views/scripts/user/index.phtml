@@ -33,7 +33,7 @@
 			</ul>
 		</div>
 	</div><!-- End of navigation -->
-	
+	<?php if($this->flag == true){?>
 	<div class="clearfix" id="main-content">
 		<div id="container">
 			<div id="col-580">
@@ -43,20 +43,18 @@
 							<div class="post hentry uncustomized-post-template">
 								<div class="post-meta clearfix">
 									<h3 class="post-title left">
-										<a href="/">XXXXXXXXXXXXXXXX</a>
+										<a href="/user/view-blog/blogid/<?php echo $this->newblog['blogid'];?>"><?php echo $this->newblog['title']?></a>
 									</h3>
 									
 								</div>
 								<div class="post-box">
 									<div class="post-content">
 										<div class="comment-count">
-											11 comments
+											<?php echo $this->newblog['time'];?>
 										</div>
 										<span class="post-backlinks post-comment-link"></span>
 										<div class="post-body entry-content">
-											
-											<p>Magazeen es el nombre de esta plantilla para Blogger adaptada porZona Cerebral. El diseño original del theme corresponde a Function.
-											<br><br>El template cuya página de demostración estás viendo ahora mismo, se comparte de forma gratuita bajo licencia Creative Commons 3.0 Reconocimiento, No Comercial y Compartir bajo la misma Licencia. Por tanto, el único requisito exigido para instalarla es mantener los créditos hacia el autor de la obra y hacia Zona Cerebral.</p>
+											<pre><?php echo $this->newblog['content'];?></pre>
 											<div style="clear: both;"></div>
 										</div>
 									</div>
@@ -74,12 +72,9 @@
 							<h2>最近Note</h2>
 							<div class="widget-content">
 								<ul>
-								<li><a href="http://blogsindependientes.com/">Blogs Independientes</a></li>
-								<li><a href="http://forosdelblog.com/">Foro para bloggers</a></li>
-								<li><a href="http://wefunction.com/">Function</a></li>
-								<li><a href="http://zonacerebral.com/">Plantillas Blogger</a></li>
-								<li><a href="http://smashingmagazine.com/">Smashing Magazine</a></li>
-								<li><a href="http://videoblogic.com/">Videos de Youtube</a></li>
+								<?php foreach ($this->bloglist as $i=>$blog){?>
+								<li><a href="/user/view-blog/blogid/<?php echo $blog['blogid'];?>"><?php echo $blog['title']?></a></li>
+								<?php }?>
 								</ul>
 								<div class="clear"></div>
 								
@@ -90,7 +85,11 @@
 			</div>
 		</div>
 	</div>
-	
+	<?php }else{?>
+	<p>还没有Note!?</p>
+	<p>赶快来新建一个Note吧！</p>
+	<div id="button_div"><button id="create_note" class="btn" onclick="window.location.href='/user/edit'">新建Note！</button></div>
+	<?php }?>
 </body>
 
 

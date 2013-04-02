@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/css/viewblog.css" />
+<title>Note List</title>
+<meta charset="utf-8">
+
+<script>
+function goback(){
+	window.location.href="/user/list";
+}
+function editit(blogid){
+	window.location.href="/user/edit/blogid/"+blogid;
+}
+</script>
+
+</head>
+<body>
+<div id="header">
+		<div class="container clearfix">
+			<div id="logo">
+				<h2>Note</h2>
+				<h1>
+					<span></span>
+					<a href=""><?php echo $this->username;?></a>
+				</h1>
+			</div>
+		</div>
+	</div><!-- End of header -->
+
+	<div id="navigation">
+		<div class="container clearfix" id="NoteX">
+			<ul class="pages">
+				<li>
+					<a href="/user" title="index">首页</a>
+				</li>
+				<li  class="current_page_item">
+					<a href="/user/list">Note</a>
+				</li>
+				<li>
+					<a href="/user/edit">新建Note</a>
+				</li>
+			</ul>
+		</div>
+	</div><!-- End of navigation -->
+		<div id="col-580">
+				<div class="main section" id="main">
+					<div class="widget Blog" id="Blog1">
+						<div class="blog-posts hfeed">
+							<div class="post hentry uncustomized-post-template">
+								<div class="post-meta clearfix">
+									<h3 class="post-title left">
+										<?php echo $this->title;?>
+									</h3>
+									
+								</div>
+								<div class="post-box">
+									<div class="post-content">
+										<div class="comment-count">
+											<?php echo $this->time;?>
+										</div>
+										<span class="post-backlinks post-comment-link"></span>
+										<div class="post-body entry-content">
+											
+											<pre><?php echo $this->content;?></pre>
+											<div style="clear: both;"></div>
+										</div>
+									</div>
+								</div>								
+							</div>
+						</div>
+						
+					</div>
+					<button id="goback" class="btn" onclick="goback();">返回Note列表</button>
+					<button id="edit" class="btn" onclick="editit(<?php echo $this->blogid;?>);">编辑Note</button>
+				</div>
+			</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/css/list.css" />
+<title>Note List</title>
+<meta charset="utf-8">
+</head>
+<body>
+<div id="header">
+		<div class="container clearfix">
+			<div id="logo">
+				<h2>Note</h2>
+				<h1>
+					<span></span>
+					<a href=""><?php echo $this->username;?></a>
+				</h1>
+			</div>
+		</div>
+	</div><!-- End of header -->
+
+	<div id="navigation">
+		<div class="container clearfix" id="NoteX">
+			<ul class="pages">
+				<li>
+					<a href="/user" title="index">首页</a>
+				</li>
+				<li  class="current_page_item">
+					<a href="/user/list">Note</a>
+				</li>
+				<li>
+					<a href="/user/edit">新建Note</a>
+				</li>
+			</ul>
+		</div>
+	</div><!-- End of navigation -->
+<div id="sidebar">
+					<div class="sidebarsec section" id="sidebarsec">
+						<div class="widget LinkList" id="LinkList1">
+							<h2>Note列表</h2>
+							<div class="widget-content">
+								<ul>
+								<?php foreach ($this->bloglist as $i=>$blog){?>
+								<li><a href="/user/view-blog/blogid/<?php echo $blog['blogid'];?>"><?php echo $blog['title']?></a></li>
+								<?php }?>
+								</ul>
+								<div class="clear"></div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+</body>
+</html>

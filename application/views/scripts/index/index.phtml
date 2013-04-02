@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<script src="js/BigInt.js" type="text/javascript"></script>
+<script src="js/Barrett.js" type="text/javascript"></script>
+<script src="js/RSA.js" type="text/javascript"></script>
+<script src="js/jquery-1.7.2.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){  
+	//十六进制公钥  
+	var rsa_n = "B6A37C362A0EB66C4C722BEA6A662E614323F2DBDA4DE2EFADFAA4804CB4F123DBA1B942529F96D9B63EF056EC52258522E99F288C7F7293D22111D1726B6A24F11345EB2258C8C4E76A3ABF2223DA52AC3D3E947A7DEB7DD1142C63FDDA247BF4E8DBD4CDAAA6CD8F9AED09EA4ABEF6AC19ABFBC9E68237231A07B0A7480C31";  
+	      
+	$("#Login").click(function(){  
+	    setMaxDigits(259); //131 => n的十六进制位数/2+3  
+	    var key      = new RSAKeyPair("010001", '', rsa_n); //010001 => e的十六进制  
+	    var password = $("#id_password").val();  
+	    password = encryptedString(key, password); //不支持汉字  
+	    $("#id_password").val(password);  
+	    //$("#login").submit();  
+	    //alert(password); //test  
+	});
+
+	$("#Regist").click(function(){
+		window.location.href="/index/regist";
+	});
+	});  
+</script>
+<title>Note</title>
+<meta charset="utf-8">
+</head>
+<body>
+<h1>NOTE</h1>
+<div id="frame">
+<?php echo $this->form;?>
+</div>
+</body>
+</html>
